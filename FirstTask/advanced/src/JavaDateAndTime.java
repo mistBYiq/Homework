@@ -1,10 +1,5 @@
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.regex.*;
 
 class Result {
 
@@ -23,6 +18,7 @@ class Result {
         Calendar calendar = new GregorianCalendar(year, month - 1, day);
         int a = calendar.get(Calendar.DAY_OF_WEEK);
         String d= "";
+
         if (a == 2) d = "MONDAY";
         if (a == 3) d = "TUESDAY";
         if (a == 4) d = "WEDNESDAY";
