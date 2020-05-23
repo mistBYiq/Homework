@@ -1,11 +1,15 @@
+// Напишите метод переводящий рубли в доллары по заданному курсу.
+// В качестве аргументов укажите кол-во рублей и курс.
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Task18 {
+
     public static void main(String[] args) {
-    //    String r = "100";
-    //    String k = "2.4462";
-    //    convert(r, k);
+        String r = "100";
+        String k = "2.4462";
+        convert(r, k);
     }
 
     //  для операций с деньгами используем класс java.math.BigDecimal

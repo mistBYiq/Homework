@@ -1,3 +1,5 @@
+// Вывести на экран все четные цифры от 1 до 100 (используйте остаток от деления)
+
 public class Task04 {
 
     public static void main(String[] args) {

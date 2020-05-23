@@ -1,3 +1,5 @@
+// Посчитать сумму цифр от 20 до 200 и результат вывести на экран (используя цикл for)
+
 public class Task07 {
 
     public static void main(String[] args) {
