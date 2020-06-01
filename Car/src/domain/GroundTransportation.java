@@ -26,6 +26,7 @@ public abstract class GroundTransportation extends Transport {
         this.enginesType = enginesType;
         this.weight = weight;
     }
+
     @Override
     public void move() {
     }
@@ -33,7 +34,4 @@ public abstract class GroundTransportation extends Transport {
     @Override
     public void stay() {
     }
-
-
-
 }

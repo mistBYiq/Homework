@@ -1,6 +1,6 @@
 package domain;
 
-public abstract class Transport implements Deterioration, Marker{
+public abstract class Transport implements Deterioration, Marker {
     protected int transportId;
 
     protected int carryingCapacity;
@@ -8,13 +8,12 @@ public abstract class Transport implements Deterioration, Marker{
     public void setTransportId(int transportId) {
         this.transportId = transportId;
     }
+    public int getTransportId() {
+        return transportId;
+    }
 
     public void setCarryingCapacity(int carryingCapacity) {
         this.carryingCapacity = carryingCapacity;
-    }
-
-    public int getTransportId() {
-        return transportId;
     }
 
     public int getCarryingCapacity() {

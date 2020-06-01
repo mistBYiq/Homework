@@ -62,7 +62,6 @@ public class Car extends GroundTransportation {
         super.setEnginesType(enginesType);
     }
 
-
     public Car(int transportId, int carryingCapacity, String enginesType, int weight,
                String color, int maxSpeed) {
         super(transportId, carryingCapacity, enginesType, weight);
@@ -109,8 +108,6 @@ public class Car extends GroundTransportation {
                 ", carryingCapacity=" + carryingCapacity +
                 "} " ;
     }
-
-
 
     @Override
     public void gearWear() {
