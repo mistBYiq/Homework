@@ -4,9 +4,10 @@ import util.CarGenerator;
 
 import java.util.Arrays;
 
-import static util.Sort.sortColor;
-import static util.Sort.sortMaxSpeed;
-import static util.Sort.sumWeight;
+import static util.CarUtil.showArrayCar;
+import static util.CarUtil.sortColor;
+import static util.CarUtil.sortMaxSpeed;
+import static util.CarUtil.sumWeight;
 
 public class MainCar {
     public static void main(String[] args) {
@@ -15,14 +16,17 @@ public class MainCar {
         for (int i = 0; i < 5; i++) {
             cars[i] = CarGenerator.generate();
         }
-        
-        Arrays.asList(cars).forEach(System.out::println);
-        sortColor(cars);
+
+        showArrayCar(cars);
+
         System.out.println("Сортировка по цвету");
-        Arrays.asList(cars).forEach(System.out::println);
+        sortColor(cars);
+        showArrayCar(cars);
+
         System.out.println("Сортировка по скорости");
         sortMaxSpeed(cars);
-        Arrays.asList(cars).forEach(System.out::println);
+        showArrayCar(cars);
+
         System.out.println("Общий вес  " + sumWeight(cars));
     }
 

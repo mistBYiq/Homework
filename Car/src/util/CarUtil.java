@@ -2,7 +2,17 @@ package util;
 
 import domain.Car;
 
-public class Sort {
+public class CarUtil {
+    public static void showCar(Car car) {
+        System.out.println(car);
+    }
+    public static void showArrayCar(Car[] cars) {
+        int n = cars.length;
+        for (int i = 0; i < n; i++) {
+            showCar(cars[i]);
+
+        }
+    }
     public static void sortColor(Car[] c) {
         Car temp ;
         boolean needSorted = true;

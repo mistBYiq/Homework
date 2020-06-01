@@ -1,7 +1,5 @@
 package domain;
 
-import java.util.Objects;
-
 public class Car extends GroundTransportation {
 
     protected String color;
@@ -24,6 +22,47 @@ public class Car extends GroundTransportation {
         this.maxSpeed = maxSpeed;
     }
 
+    @Override
+    public int getCarryingCapacity() {
+        return super.getCarryingCapacity();
+    }
+
+    @Override
+    public void setCarryingCapacity(int carryingCapacity) {
+        super.setCarryingCapacity(carryingCapacity);
+    }
+
+    @Override
+    public int getTransportId() {
+        return super.getTransportId();
+    }
+
+    @Override
+    public void setTransportId(int transportId) {
+        super.setTransportId(transportId);
+    }
+
+    @Override
+    public int getWeight() {
+        return super.getWeight();
+    }
+
+    @Override
+    public void setWeight(int weight) {
+        super.setWeight(weight);
+    }
+
+    @Override
+    public String getEnginesType() {
+        return super.getEnginesType();
+    }
+
+    @Override
+    public void setEnginesType(String enginesType) {
+        super.setEnginesType(enginesType);
+    }
+
+
     public Car(int transportId, int carryingCapacity, String enginesType, int weight,
                String color, int maxSpeed) {
         super(transportId, carryingCapacity, enginesType, weight);
@@ -33,12 +72,12 @@ public class Car extends GroundTransportation {
 
     @Override
     public void move() {
-        super.move();
+        System.out.println("Включить двигатель. Начать движение");
     }
 
     @Override
     public void stay() {
-        super.stay();
+        System.out.println("Остановиться. Выключить двигатель");
     }
 
     @Override
@@ -62,8 +101,19 @@ public class Car extends GroundTransportation {
     @Override
     public String toString() {
         return "Car{" +
-                ", color='" + color + '\'' +
+                "color='" + color + '\'' +
                 ", maxSpeed=" + maxSpeed +
-                "} " + super.toString();
+                ", enginesType='" + enginesType + '\'' +
+                ", weight=" + weight +
+                ", transportId=" + transportId +
+                ", carryingCapacity=" + carryingCapacity +
+                "} " ;
+    }
+
+
+
+    @Override
+    public void gearWear() {
+        carryingCapacity--;
     }
 }

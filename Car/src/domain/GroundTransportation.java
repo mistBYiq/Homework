@@ -1,6 +1,6 @@
 package domain;
 
-public class GroundTransportation extends Transport {
+public abstract class GroundTransportation extends Transport {
     protected String enginesType;
 
     protected int weight;
@@ -26,14 +26,14 @@ public class GroundTransportation extends Transport {
         this.enginesType = enginesType;
         this.weight = weight;
     }
-
     @Override
     public void move() {
-        System.out.println("Включить двигатель. Начать движение");
     }
 
     @Override
     public void stay() {
-        System.out.println("Остановиться. Выключить двигатель");
     }
+
+
+
 }
