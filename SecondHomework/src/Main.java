@@ -386,8 +386,30 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер матриц");
         int n = scanner.nextInt();
+
         int[][] matrixA = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrixA[i][j] = i + j;
+            }
+        }
+
         int[][] matrixB = new int[n][n];
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                matrixB[i][j] = i + j + 1;
+            }
+        }
+
+        int[][] result = new int[n][n];
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                for (int k = 0; k < n; ++k) {
+                    result[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        Outputs.showMatrix(result);
     }
 
     // Write a Java program to convert an array to ArrayList.
