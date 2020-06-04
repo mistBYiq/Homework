@@ -9,6 +9,7 @@ public class Task09 {
     public static void main(String[] args) {
         int a = 7;
         int b = 1;
+
         swapValues1(a, b);
         swapValues2(a, b);
     }

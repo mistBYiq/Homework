@@ -5,8 +5,13 @@ package defaults;
 
 class Task01 {
 
+    public static final double MOON_GRAVITY = 0.16;
+
     public static void main(String[] args) {
-        double m = 75.5;
-        System.out.println("My weight on the moon is " + m * 0.16 + " kg");
+
+        double weight = 75.5;
+        double moonWeight = weight * MOON_GRAVITY;
+
+        System.out.println("My weight on the moon is " + moonWeight + " kg");
     }
 }

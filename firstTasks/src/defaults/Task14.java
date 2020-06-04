@@ -6,19 +6,29 @@
 
 package defaults;
 
+import java.util.Scanner;
+
 public class Task14 {
 
     public static void main(String[] args) {
-        int a, b;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter first number  ");
+        int first = scanner.nextInt();
+        System.out.println("Enter second number  ");
+        int second = scanner.nextInt();
+        scanner.close();
 
-        a = 1;
-        b = 2;
+        determine(first, second);
 
+    }
+
+    public static void determine(int a, int b) {
         if(a > b) {
-            a += 3;
+            a += Util.THREE;
         } else {
-            b += 8;
+            b += Util.EIGHT;
         }
+
         System.out.println(a);
         System.out.println(b);
     }

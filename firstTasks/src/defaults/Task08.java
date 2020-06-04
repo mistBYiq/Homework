@@ -7,6 +7,19 @@ public class Task08 {
 
     public static void main(String[] args) {
 
+        showMonths();
+        showMonthsEnum();
+    }
+
+    // create an array of all enum values and print
+    public static void showMonthsEnum() {
+        Month[] months = Month.values();
+        for (Month month : months) {
+            System.out.println(month.toString());
+        }
+    }
+
+    public static void showMonths() {
         for (int i = 1; i <= 12 ; i++) {
 
             if (i == 1) {

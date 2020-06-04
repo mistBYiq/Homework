@@ -5,22 +5,28 @@ package defaults;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.util.Scanner;
 
 public class Task18 {
 
+    public static final String COURSE = "2.4462";
+
     public static void main(String[] args) {
-        String r = "100";
-        String k = "2.4462";
-        convert(r, k);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number of rubles  ");
+        String rubles = scanner.nextLine();
+        scanner.close();
+
+        convert(rubles, COURSE);
     }
 
-    //  для операций с деньгами используем класс java.math.BigDecimal
-    public static void convert(String rub, String kyrs) {
-        BigDecimal rubley = new BigDecimal(rub);
-        BigDecimal exchangeRates = new BigDecimal(kyrs);
-        //  чтобы не было ArithmeticException и для удобства округляем до копеек(2 знака после запятой),
-        //  округляем с помощью .setScale(scale, roundingMode)
-        BigDecimal value = rubley.divide(exchangeRates,2, RoundingMode.HALF_DOWN);
+    //  for money operations we use the java.math.BigDecimal class
+    public static void convert(String rubles, String course) {
+        BigDecimal ruble = new BigDecimal(rubles);
+        BigDecimal exchangeRates = new BigDecimal(course);
+
+        // so that there is no ArithmeticException and for convenience we round to cents (2 decimal places)
+        BigDecimal value = ruble.divide(exchangeRates,2, RoundingMode.HALF_DOWN);
         System.out.println(value);
     }
 }

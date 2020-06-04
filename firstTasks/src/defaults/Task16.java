@@ -10,13 +10,15 @@ public class Task16 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("min ");
-        int a = scanner.nextInt();
-        System.out.println("max ");
-        int b = scanner.nextInt();
-        System.out.println("step ");
-        int c = scanner.nextInt();
-        showNum(a, b, c);
+        System.out.println("Enter the minimum number  ");
+        int min = scanner.nextInt();
+        System.out.println("Enter the maximum number  ");
+        int max = scanner.nextInt();
+        System.out.println("Enter the step number  ");
+        int step = scanner.nextInt();
+        scanner.close();
+
+        showNum(min, max, step);
     }
 
     public static void showNum(int min, int max, int step) {

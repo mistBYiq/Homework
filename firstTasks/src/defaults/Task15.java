@@ -7,24 +7,36 @@ package defaults;
 
 public class Task15 {
 
+    public static final int MIN = 1;
+    public static final int MAX = 100;
+
     public static void main(String[] args) {
-        // 1
-        for (int i = 1; i <= 100; i++) {
+
+        showNumbersWithFor(MIN, MAX);
+        showNumbersWithWhile(MIN, MAX);
+        showNumbersWithDoWhile(MIN, MAX);
+
+    }
+
+    public static void showNumbersWithFor(int min, int max) {
+        for (int i = min; i <= max; i++) {
             System.out.print(i + " ");
         }
         System.out.println();
+    }
 
-        // 2
-        int i = 1;
-        while (i <= 100) {
+    public static void showNumbersWithWhile(int min, int max) {
+        int i = min;
+        while (i <= max) {
             System.out.print(i++ + " ");
         }
         System.out.println();
+    }
 
-        //3
-        int j = 1;
+    public static void showNumbersWithDoWhile(int min, int max) {
+        int i = min;
         do {
-            System.out.print(j++ + " ");
-        } while (j <= 100);
+            System.out.print(i++ + " ");
+        } while (i <= max);
     }
 }

@@ -4,12 +4,23 @@
 
 package defaults;
 
+import java.util.Scanner;
+
 public class Task13 {
 
     public static void main(String[] args) {
-        String a = "One";
-        String b = "Two";
-        String c = a + b;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter first string  ");
+        String a = scanner.nextLine();
+        System.out.println("Enter second string  ");
+        String b = scanner.nextLine();
+        scanner.close();
+
+        String c = concatenateLine(a, b);
         System.out.println(c);
+    }
+
+    public static String concatenateLine(String a, String b) {
+        return a + b;
     }
 }
