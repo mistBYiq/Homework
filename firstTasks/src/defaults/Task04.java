@@ -4,12 +4,9 @@ package defaults;
 
 public class Task04 {
 
-    public static final int MIN = 1;
-    public static final int MAX = 100;
-
     public static void main(String[] args) {
 
-        showEven(MIN,MAX);
+        showEven(Util.ONE, Util.ONE_HUNDRED);
     }
 
     // displays even numbers from the min max range

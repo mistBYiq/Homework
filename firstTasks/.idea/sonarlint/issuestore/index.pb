@@ -27,5 +27,3 @@ H
 src/defaults/Task07.java,3\8\381134341c2dbef852127ddd7079c9973d1c01bb
 H
 src/defaults/Task08.java,3\4\3452dcf264ddf1a3de26187b41beddf265c18f60
-H
-src/defaults/Months.java,8\f\8f44c9af55d21af7d17a695ccde8d31c42dc4d25

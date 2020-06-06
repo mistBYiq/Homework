@@ -4,12 +4,11 @@ package defaults;
 
 public class Task07 {
 
-    public static final int MIN = 20;
-    public static final int MAX = 200;
+
 
     public static void main(String[] args) {
 
-        showSumNumbers(MIN, MAX);
+        showSumNumbers(Util.TWENTY, Util.TWO_HUNDRED);
     }
 
     public static void showSumNumbers(int min, int max) {

@@ -8,6 +8,7 @@ package defaults;
 public class Task12 {
 
     public static void main(String[] args) {
+
         boolean a = true;
         boolean b = false;
 
@@ -15,11 +16,11 @@ public class Task12 {
         isTrueOrFalse(b);
     }
 
-    public static void isTrueOrFalse(boolean a) {
-        if(a) {
-            System.out.println("a истина");
+    public static void isTrueOrFalse(boolean bool) {
+        if(bool) {
+            System.out.println(" истина");
         } else {
-            System.out.println("a ложь");
+            System.out.println(" ложь");
         }
     }
 }

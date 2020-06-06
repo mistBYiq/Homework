@@ -7,15 +7,11 @@ package defaults;
 
 public class Task15 {
 
-    public static final int MIN = 1;
-    public static final int MAX = 100;
-
     public static void main(String[] args) {
 
-        showNumbersWithFor(MIN, MAX);
-        showNumbersWithWhile(MIN, MAX);
-        showNumbersWithDoWhile(MIN, MAX);
-
+        showNumbersWithFor(Util.ONE, Util.ONE_HUNDRED);
+        showNumbersWithWhile(Util.ONE, Util.ONE_HUNDRED);
+        showNumbersWithDoWhile(Util.ONE, Util.ONE_HUNDRED);
     }
 
     public static void showNumbersWithFor(int min, int max) {

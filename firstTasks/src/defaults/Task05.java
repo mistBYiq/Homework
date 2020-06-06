@@ -4,12 +4,9 @@ package defaults;
 
 public class Task05 {
 
-    public static final int MIN = 1;
-    public static final int MAX = 15;
-
     public static void main(String[] args) {
 
-        showOdd(MIN, MAX);
+        showOdd(Util.ONE, Util.FIFTEEN);
     }
 
     // displays odd numbers from the min max range

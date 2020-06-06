@@ -7,8 +7,9 @@ package defaults;
 public class Task09 {
 
     public static void main(String[] args) {
-        int a = 7;
-        int b = 1;
+
+        int a = Util.enterNumericIntData();
+        int b = Util.enterNumericIntData();
 
         swapValues1(a, b);
         swapValues2(a, b);

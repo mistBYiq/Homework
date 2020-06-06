@@ -5,15 +5,12 @@ package defaults;
 
 public class Task03 {
 
-    public static final String VALUE_ONE = "12321";
-    public static final String VALUE_TWO = "12345";
-
     public static void main(String[] args) {
 
-        System.out.println(VALUE_ONE + "  Is this number a palindrome? "
-                            + isPalindrome1(VALUE_ONE) + " " + isPalindrome2(VALUE_ONE));
-        System.out.println(VALUE_TWO + "  Is this number a palindrome? "
-                            + isPalindrome1(VALUE_TWO) + " " + isPalindrome2(VALUE_TWO));
+        System.out.println(Util.STRING_ONE + "  Is this number a palindrome? "
+                            + isPalindrome1(Util.STRING_ONE) + " " + isPalindrome2(Util.STRING_ONE));
+        System.out.println(Util.STRING_TWO + "  Is this number a palindrome? "
+                            + isPalindrome1(Util.STRING_TWO) + " " + isPalindrome2(Util.STRING_TWO));
     }
 
     // compare the characters of the string first with last, second with penultimate, etc.

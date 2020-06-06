@@ -12,10 +12,9 @@ public class Task18 {
     public static final String COURSE = "2.4462";
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter the number of rubles  ");
-        String rubles = scanner.nextLine();
-        scanner.close();
+        String rubles = Util.enterStringData();
 
         convert(rubles, COURSE);
     }

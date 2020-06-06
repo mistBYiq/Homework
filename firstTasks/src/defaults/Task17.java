@@ -20,12 +20,12 @@ public class Task17 {
         }
     }
 
-    public static double findMaxElement(double[] a) {
-        int n = a.length;
-        double max = a[0];
+    public static double findMaxElement(double[] array) {
+        int n = array.length;
+        double max = array[0];
         for (int i = 1; i < n; i++) {
-            if (max < a[i]) {
-               max = a[i];
+            if (max < array[i]) {
+               max = array[i];
             }
         }
         return max;

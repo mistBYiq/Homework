@@ -21,7 +21,6 @@ public class Task08 {
 
     public static void showMonths() {
         for (int i = 1; i <= 12 ; i++) {
-
             if (i == 1) {
                 System.out.println(i + " Январь");
             }

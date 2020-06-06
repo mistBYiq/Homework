@@ -4,19 +4,16 @@
 
 package defaults;
 
-import java.util.Scanner;
-
 public class Task16 {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+
         System.out.println("Enter the minimum number  ");
-        int min = scanner.nextInt();
+        int min = Util.enterNumericIntData();
         System.out.println("Enter the maximum number  ");
-        int max = scanner.nextInt();
+        int max = Util.enterNumericIntData();
         System.out.println("Enter the step number  ");
-        int step = scanner.nextInt();
-        scanner.close();
+        int step = Util.enterNumericIntData();
 
         showNum(min, max, step);
     }
