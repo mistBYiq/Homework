@@ -6,6 +6,9 @@ public class Car extends GroundTransportation implements Upgrading {
 
     protected int maxSpeed;
 
+    public Car() {
+    }
+
     public Car(int transportId, int carryingCapacity, String enginesType, int weight,
                String color, int maxSpeed) {
         super(transportId, carryingCapacity, enginesType, weight);

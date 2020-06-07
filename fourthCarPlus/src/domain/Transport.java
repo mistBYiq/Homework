@@ -8,6 +8,9 @@ public abstract class Transport implements Deterioration, Marker {
 
     protected int carryingCapacity;
 
+    public Transport() {
+    }
+
     public Transport(int transportId, int carryingCapacity) {
         this.transportId = transportId;
         this.carryingCapacity = carryingCapacity;

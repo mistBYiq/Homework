@@ -6,6 +6,9 @@ public abstract class GroundTransportation extends Transport {
 
     protected int weight;
 
+    public GroundTransportation() {
+    }
+
     public GroundTransportation(int transportId, int carryingCapacity, String enginesType, int weight) {
         super(transportId, carryingCapacity);
         this.enginesType = enginesType;
