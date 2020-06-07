@@ -30,15 +30,30 @@ public class CarUtil {
         int temp = random(1, 3);
         if (temp == 1) {
             weight = 1500;
-            color = "white";
         }
         if (temp == 2) {
             weight = 2500;
-            color = "black";
         }
         if (temp == 3) {
             weight = 3500;
-            color = "red";
+        }
+
+        switch (random(1,5)) {
+            case 1:
+                color = "green";
+                break;
+            case 2:
+                color = "blue";
+                break;
+            case 3:
+                color = "white";
+                break;
+            case 4:
+                color = "black";
+                break;
+            case 5:
+                color = "red";
+                break;
         }
 
         return new Car(weight,color,id);

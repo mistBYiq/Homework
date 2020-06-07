@@ -1,13 +1,25 @@
 package util;
 
 import domain.Car;
+import domain.Color;
+import domain.Engine;
+
 
 public class CarGenerator {
 
-    public static Car generate() {
+    public static Car generateCar() {
 
         return new Car(transportId(),carryingCapacity(),enginesType(),
-                weight(),color(),maxSpeed());
+                weight(), color(),maxSpeed());
+    }
+
+    public static Car[] generateArrayCars(int num) {
+        Car[] cars = new Car[num];
+        for (int i = 0; i < num; i++) {
+            cars[i] = generateCar();
+        }
+
+        return cars;
     }
 
     private static int transportId() {
@@ -15,48 +27,50 @@ public class CarGenerator {
     }
 
     private static int carryingCapacity() {
-        return random(200, 2000);
+        return random(50, 200);
     }
 
     private static String enginesType() {
-        int n = random(1,4);
-        String type = "";
-        if(n == 1) {
-            type = "petrol";
+        String type = "DEFAULT";
+        switch (random(1, 4)) {
+            case 1:
+                type = Engine.DIESEL.toString();
+                break;
+            case 2:
+                type = Engine.PETROL.toString();
+                break;
+            case 3:
+                type = Engine.GAS.toString();
+                break;
+            case 4:
+                type = Engine.ELECTRIC.toString();
+                break;
         }
-        if(n == 2) {
-            type = "diesel";
-        }
-        if(n == 3) {
-            type = "gas";
-        }
-        if(n == 4) {
-            type = "electric";
-        }
-        return type;
+       return type;
     }
 
     private static int weight() {
-        return random(1000,5000);
+        return random(1500, 3500);
     }
 
     private static String color() {
-        int n = random(1,5);
-        String color = "";
-        if(n == 1) {
-            color = "green";
-        }
-        if(n == 2) {
-            color = "blue";
-        }
-        if(n == 3) {
-            color = "black";
-        }
-        if(n == 4) {
-            color = "red";
-        }
-        if(n == 5) {
-            color = "white";
+        String color = "DEFAULT";
+        switch (random(1, 5)) {
+            case 1:
+                color = Color.BLACK.toString();
+                break;
+            case 2:
+                color = Color.WHITE.toString();
+                break;
+            case 3:
+                color = Color.BLUE.toString();
+                break;
+            case 4:
+                color = Color.RED.toString();
+                break;
+            case 5:
+                color = Color.GREEN.toString();
+                break;
         }
         return color;
     }
@@ -65,7 +79,7 @@ public class CarGenerator {
         return random(60, 180);
     }
 
-    public static int random(int min, int max) {
+    private static int random(int min, int max) {
         max -= min;
         return (int) (Math.random() * ++max) + min;
     }

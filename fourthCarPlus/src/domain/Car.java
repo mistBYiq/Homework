@@ -1,10 +1,17 @@
 package domain;
 
-public class Car extends GroundTransportation {
+public class Car extends GroundTransportation implements Upgrading {
 
     protected String color;
 
     protected int maxSpeed;
+
+    public Car(int transportId, int carryingCapacity, String enginesType, int weight,
+               String color, int maxSpeed) {
+        super(transportId, carryingCapacity, enginesType, weight);
+        this.color = color;
+        this.maxSpeed = maxSpeed;
+    }
 
     public String getColor() {
         return color;
@@ -22,21 +29,30 @@ public class Car extends GroundTransportation {
         this.maxSpeed = maxSpeed;
     }
 
-    public Car(int transportId, int carryingCapacity, String enginesType, int weight,
-               String color, int maxSpeed) {
-        super(transportId, carryingCapacity, enginesType, weight);
-        this.color = color;
-        this.maxSpeed = maxSpeed;
-    }
-
     @Override
     public void move() {
-        System.out.println("Включить двигатель. Начать движение");
+        System.out.println("Turn on the engine. Start movement");
     }
 
     @Override
     public void stay() {
-        System.out.println("Остановиться. Выключить двигатель");
+        System.out.println("Stay. Turn off engine");
+    }
+
+    @Override
+    public void gearWear() {
+        this.carryingCapacity--;
+    }
+
+    @Override
+    public void changeEngine() {
+        this.enginesType = "ROTARY PISTON";
+        this.maxSpeed--;
+    }
+
+    @Override
+    public void repaint() {
+        this.color = "NAVY BLUE";
     }
 
     @Override
@@ -69,8 +85,5 @@ public class Car extends GroundTransportation {
                 "} " ;
     }
 
-    @Override
-    public void gearWear() {
-        carryingCapacity--;
-    }
+
 }

@@ -8,7 +8,7 @@ package domain;
 
 public class Car {
 
-    public static final String baseName = "AUTOMOBILE";
+    private static final String BASE_NAME = "AUTOMOBILE";
 
     private int carWeight;
 
@@ -16,40 +16,7 @@ public class Car {
 
     private long carId;
 
-    public int getCarWeight() {
-        return carWeight;
-    }
-
-    public String getCarColor() {
-        return carColor;
-    }
-
-    public long getCarId() {
-        return carId;
-    }
-
-    public void setCarWeight(int carWeight) {
-        this.carWeight = carWeight;
-    }
-
-    public void setCarColor(String carColor) {
-        this.carColor = carColor;
-    }
-
-    public void setCarId(long carId) {
-        this.carId = carId;
-    }
-
     public Car() {
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "carWeight=" + carWeight +
-                ", carColor='" + carColor + '\'' +
-                ", carId=" + carId +
-                '}';
     }
 
     public Car(int carWeight, String carColor, long carId) {
@@ -58,4 +25,41 @@ public class Car {
         this.carId = carId;
     }
 
+    public static String getBaseName() {
+        return BASE_NAME;
+    }
+
+    public int getCarWeight() {
+        return carWeight;
+    }
+
+    public void setCarWeight(int carWeight) {
+        this.carWeight = carWeight;
+    }
+
+    public String getCarColor() {
+        return carColor;
+    }
+
+    public void setCarColor(String carColor) {
+        this.carColor = carColor;
+    }
+
+    public long getCarId() {
+        return carId;
+    }
+
+    public void setCarId(long carId) {
+        this.carId = carId;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "BASE_NAME=" + BASE_NAME +
+                ", carWeight=" + carWeight +
+                ", carColor='" + carColor + '\'' +
+                ", carId=" + carId +
+                '}';
+    }
 }
