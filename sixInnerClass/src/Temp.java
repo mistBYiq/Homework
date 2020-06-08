@@ -1,4 +1,4 @@
-public class Main {
+public class Temp {
 
     public final static String FINAL_STRING = "Final var";
     public static int valueStatic = 7;
