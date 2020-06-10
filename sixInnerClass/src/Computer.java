@@ -69,6 +69,11 @@ public class Computer {
         System.out.println("PC switch OFF");
     }
 
+    public void powerSupply() {
+        PowerSupply powerSupply = new PowerSupply();
+        powerSupply.getPowerSupply();
+    }
+
     class PowerSupply {
         private int powerSupply;
 

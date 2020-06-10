@@ -1,4 +1,8 @@
-public class Demo {
+// 1.Create anonymous class for object and run method that was overrided
+// (!class Car line 40) 2. Create local class, create method and call method через вызов метода, внутри которого описан класс
+// 3. Class Computer, inner class PowerSupply
+
+public class Main {
     public static void main(String[] args) {
         Car car = new Car(1, 3000, "green");
         System.out.println(car.toString());
@@ -31,7 +35,8 @@ public class Demo {
         System.out.println("FuelConsumption " + car6.getFuelConsumption());
         System.out.println("All cars = " + Car.getCarCounter());
     }
-    Computer computer = new Computer();
-    Computer.PowerSupply powerSupply = ;
 
+// 3. Class Computer, inner class PowerSupply
+    Computer computer = new Computer();
+    Computer.PowerSupply powerSupply = computer.new PowerSupply();
 }

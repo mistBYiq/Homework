@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
 //Задание бенчмарк (проверка производительности):
 //1) Добавить 10-100 тысяч элементов в ArrayList and LinkedList
@@ -9,25 +9,25 @@ import java.util.concurrent.TimeUnit;
 //4) замерять время окончания
 
 public class Benchmark {
+    
     public static void main(String[] args) {
 
-        addArrayList(100_000);
-        addLinkedList(100_000);
+        addArrayList(10_000);
+        addLinkedList(10_000);
 
     }
 
     public static void addArrayList(int operations) {
         long start = System.nanoTime();
-        ArrayList<String> list = new ArrayList<>();
+        List<String> list = new ArrayList<>();
         for (int i = 0; i < operations; i++) {
             list.add("list" + i);
         }
 
         long finish = System.nanoTime();
 
-        //long convert = TimeUnit.MILLISECONDS.convert((finish - start), TimeUnit.NANOSECONDS);
         System.out.println("\n ArrayList: add " + operations + " elements. Time work : " + (finish - start) +
-                " nanoseconds.  Average time for ONE item : " + (finish - start)/100_000.0 + " nanoseconds");
+                " nanoseconds.  Average time for ONE item : " + (finish - start)/10_000.0 + " nanoseconds");
 
         int n = list.size();
         String test = list.get(n/2);
@@ -53,14 +53,14 @@ public class Benchmark {
 
     public static void addLinkedList(int operations) {
         long start = System.nanoTime();
-        LinkedList<String> linkedList = new LinkedList<>();
+        List<String> linkedList = new LinkedList<>();
         for (int i = 0; i < operations; i++) {
             linkedList.add("linked" + i);
         }
 
         long finish = System.nanoTime();
         System.out.println("\n LinkedList: add " + operations + " elements. Time work : " + (finish - start) +
-                " nanoseconds.  Average time for ONE item : " + (finish - start)/100_000.0 + " nanoseconds");
+                " nanoseconds.  Average time for ONE item : " + (finish - start)/10_000.0 + " nanoseconds");
 
         int n = linkedList.size();
         String test = linkedList.get(n/2);
