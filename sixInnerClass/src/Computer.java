@@ -10,8 +10,6 @@ public class Computer {
 
     private int monitor;
 
-    private int powerSupply;
-
     public Computer() {
     }
 
@@ -61,14 +59,6 @@ public class Computer {
 
     public void setMonitor(int monitor) {
         this.monitor = monitor;
-    }
-
-    public int getPowerSupply() {
-        return powerSupply;
-    }
-
-    public void setPowerSupply(int powerSupply) {
-        this.powerSupply = powerSupply;
     }
 
     public void start() {

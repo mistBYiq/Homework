@@ -31,4 +31,7 @@ public class Demo {
         System.out.println("FuelConsumption " + car6.getFuelConsumption());
         System.out.println("All cars = " + Car.getCarCounter());
     }
+    Computer computer = new Computer();
+    Computer.PowerSupply powerSupply = ;
+
 }
