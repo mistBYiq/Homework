@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9b16cca-f8ec-494e-ab1b-4f64a488ce76" name="Default Changelist" comment="" />
+    <list default="true" id="d9b16cca-f8ec-494e-ab1b-4f64a488ce76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../benchmark/.idea/benchmark.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/collections.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/Util/UtilBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/Util/UtilGood.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/Util/UtilPerson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/domain/Book.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/domain/Good.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/domain/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../collections/src/domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../сlasswork/workkk/workkk.iml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../JAVA cod/exx/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
