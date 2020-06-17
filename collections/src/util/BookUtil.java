@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class BookUtil {
 
-    static String[] bookName = {"Мастер и Маргарита", "Над пропастью во ржи", "Маленький принц", "Вино из одуванчиков",
+    static final String[] bookName = {"Мастер и Маргарита", "Над пропастью во ржи", "Маленький принц", "Вино из одуванчиков",
             "Анна Каренина", "Преступление и наказание", "Преступление и наказание", "Евгений Онегин", "Великий Гэтсби",
             "Бойцовский клуб", "Зелёная миля", "Герой нашего времени", "Война и мир", "Золотой телёнок",
             "Одиночество в Сети", "Властелин колец", "Трудно быть богом",
@@ -33,7 +33,7 @@ public class BookUtil {
 
     public static Book[] generateBooks(int value) {
         Book[] books = new Book[value];
-        for (int i = 0; i < value; i++) {
+        for (int i = 0; i < books.length; i++) {
             books[i] = generateBook();
         }
         return books;

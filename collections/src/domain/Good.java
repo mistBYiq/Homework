@@ -4,7 +4,7 @@ public class Good {
     private Long idGood;
     private String category;
     private String nameGood;
-    private Person salesman;
+    private String salesman;
     private Double price;
     private Integer quantityGoodsStock;
 
@@ -12,7 +12,7 @@ public class Good {
         idGood = 0L;
         category = "Not Selected";
         nameGood = "Good";
-        salesman = new Person();
+        salesman = "company";
         price = 0.1;
         quantityGoodsStock = 1;
     }
@@ -21,8 +21,9 @@ public class Good {
         setIdGood(idGood);
     }
 
-    public Good(Long idGood, String category, String nameGood, Person salesman, Double price, Integer quantityGoodsStock) {
-        setIdGood(idGood);
+    public Good(Long idGood, String category, String nameGood, String salesman,
+                Double price, Integer quantityGoodsStock) {
+        this.idGood = idGood;
         this.category = category;
         this.nameGood = nameGood;
         this.salesman = salesman;
@@ -51,15 +52,15 @@ public class Good {
     }
 
     public void setNameGood(String nameGood) {
-        this.nameGood = nameGood;
+        this.nameGood += nameGood;
     }
 
-    public Person getSalesman() {
+    public String getSalesman() {
         return salesman;
     }
 
-    public void setSalesman(Person salesman) {
-        this.salesman = salesman;
+    public void setSalesman(String salesman) {
+        this.salesman += salesman;
     }
 
     public Double getPrice() {
@@ -76,5 +77,46 @@ public class Good {
 
     public void setQuantityGoodsStock(Integer quantityGoodsStock) {
         this.quantityGoodsStock = quantityGoodsStock;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Good)) return false;
+
+        Good good = (Good) o;
+
+        if (getIdGood() != null ? !getIdGood().equals(good.getIdGood()) : good.getIdGood() != null) return false;
+        if (getCategory() != null ? !getCategory().equals(good.getCategory()) : good.getCategory() != null)
+            return false;
+        if (getNameGood() != null ? !getNameGood().equals(good.getNameGood()) : good.getNameGood() != null)
+            return false;
+        if (getSalesman() != null ? !getSalesman().equals(good.getSalesman()) : good.getSalesman() != null)
+            return false;
+        if (getPrice() != null ? !getPrice().equals(good.getPrice()) : good.getPrice() != null) return false;
+        return getQuantityGoodsStock() != null ? getQuantityGoodsStock().equals(good.getQuantityGoodsStock()) : good.getQuantityGoodsStock() == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getIdGood() != null ? getIdGood().hashCode() : 0;
+        result = 31 * result + (getCategory() != null ? getCategory().hashCode() : 0);
+        result = 31 * result + (getNameGood() != null ? getNameGood().hashCode() : 0);
+        result = 31 * result + (getSalesman() != null ? getSalesman().hashCode() : 0);
+        result = 31 * result + (getPrice() != null ? getPrice().hashCode() : 0);
+        result = 31 * result + (getQuantityGoodsStock() != null ? getQuantityGoodsStock().hashCode() : 0);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Good{" +
+                "idGood=" + idGood +
+                ", category='" + category + '\'' +
+                ", nameGood='" + nameGood + '\'' +
+                ", salesman='" + salesman + '\'' +
+                ", price=" + price +
+                ", quantityGoodsStock=" + quantityGoodsStock +
+                '}';
     }
 }

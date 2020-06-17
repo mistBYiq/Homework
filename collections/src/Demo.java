@@ -1,14 +1,18 @@
 import domain.Book;
 import domain.Student;
+import domain.User;
 import util.BookUtil;
 import util.StudentUtil;
+import util.UserUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 
@@ -27,9 +31,7 @@ public class Demo {
         Book[] generatedBooks = BookUtil.generateBooks(20);
 
         List<Book> bookLinkedList = new LinkedList<>();
-        for (Book generatedBook : generatedBooks) {
-            bookLinkedList.add(generatedBook);
-        }
+        Collections.addAll(bookLinkedList, generatedBooks);
 
         BookUtil.showBookList(bookLinkedList);
         System.out.println("elements in LinkedList = " + bookLinkedList.size());
@@ -49,10 +51,8 @@ public class Demo {
         BookUtil.showBookArray(books);
         System.out.println("elements in array with duplicate = " + books.length);
 
-        Set<Book> bookHashSet = new HashSet<Book>();
-        for (Book book : books) {
-            bookHashSet.add(book);
-        }
+        Set<Book> bookHashSet = new HashSet<>();
+        Collections.addAll(bookHashSet, books);
         BookUtil.showBookSet(bookHashSet);
         System.out.println("elements in HashSet = " + bookHashSet.size());
 
@@ -64,7 +64,7 @@ public class Demo {
         // middle name of the author of the book (these fields must be added to the Book class).
         System.out.println("  ========== part 3 ==========");
 
-        List<Book> booksArrayList = new ArrayList<Book>();
+        List<Book> booksArrayList = new ArrayList<>();
         BookUtil.generateListBooks(booksArrayList, 25);
         BookUtil.showBookList(booksArrayList);
 
@@ -92,27 +92,25 @@ public class Demo {
 
 
 
-
-//        Person person = new Person();
+//        User liza = UserUtil.generateUserWithFriend(2);
+//        UserUtil.showUser(liza);
+//        User pasha = UserUtil.generateUserWithFriend(2);
+//        UserUtil.showUser(pasha);
+//        User katya = UserUtil.generateUserWithFriend(2);
+//        UserUtil.showUser(katya);
+//        User max = UserUtil.generateUserWithFriend(2);
+//        UserUtil.showUser(max);
 //
+//        User user = UserUtil.generateUser();
+//        UserUtil.addFriend(user, liza);
+//        UserUtil.addFriend(user, pasha);
+//        UserUtil.addFriend(user, katya);
+//        UserUtil.addFriend(user, max);
+//        UserUtil.showUser(user);
 //
-//        User user2 = generateUser(5);
-//        System.out.println(user2);
-//        User user3 = generateUser(5);
-//        System.out.println(user3);
-//        User user4 = generateUser(5);
-//        System.out.println(user4);
-//        User user5 = generateUser(5);
-//        System.out.println(user5);
+//        Map<Long, User> userMap = new TreeMap<>();
+//        UserUtil.addMap(userMap, user);
 //
-//        System.out.println();
-//
-//        User user = new User();
-//
-//        UtilUser.addFriend(user, user2);
-//        UtilUser.addFriend(user, user3);
-//        UtilUser.addFriend(user, user4);
-//        UtilUser.addFriend(user, user5);
-//        System.out.println(user);
+//        UserUtil.showMapUser(userMap);
     }
 }

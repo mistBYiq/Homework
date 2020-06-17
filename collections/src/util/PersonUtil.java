@@ -80,7 +80,7 @@ public class PersonUtil {
     }
 
     public static Integer generateDateBirth() {
-        return random(1600,2000);
+        return random(1950,2000);
     }
 
     public static int random(int min, int max) {

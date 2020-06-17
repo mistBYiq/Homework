@@ -1,9 +1,5 @@
 package domain;
 
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.function.Consumer;
-
 public class Student extends Person implements Comparable<Student> {
     private Long idStudent;
     private Integer course;
@@ -89,6 +85,4 @@ public class Student extends Person implements Comparable<Student> {
             return 0;
         }
     }
-
-
 }

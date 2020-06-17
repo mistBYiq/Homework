@@ -1,6 +1,5 @@
 package util;
 
-import domain.Book;
 import domain.Student;
 
 import java.util.HashMap;
@@ -55,7 +54,7 @@ public class StudentUtil {
         studentSet.removeIf(student -> (student.getIdStudent() % 2) != 0);
     }
 
-    public static Set<Student> remove(Set<Student> set) {
+    public static Set<Student> removeOddId(Set<Student> set) {
         Iterator<Student> iterator = set.iterator();
         while ( iterator.hasNext()) {
             Student student = iterator.next();
@@ -87,6 +86,15 @@ public class StudentUtil {
             System.out.println(student);
         }
         System.out.println();
+    }
+
+    public static void showMapStudent(Map<Long, Student> studentMap) {
+        for (Map.Entry<Long, Student> student : studentMap.entrySet()) {
+            Long key = student.getKey();
+            System.out.println(key);
+            Student value = student.getValue();
+            System.out.println(value);
+        }
     }
 
 }
