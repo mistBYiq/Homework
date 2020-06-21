@@ -12,7 +12,6 @@ public class Book {
     }
 
     public Book() {
-
     }
 
     public Book(Integer idBook, String nameBook, Person author) {

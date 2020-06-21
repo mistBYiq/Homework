@@ -1,9 +1,9 @@
 import domain.Book;
+import domain.Good;
 import domain.Student;
-import domain.User;
 import util.BookUtil;
+import util.GoodUtil;
 import util.StudentUtil;
-import util.UserUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -12,11 +12,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
 
 public class Demo {
+
     public static final String NAME = "NAME";
     public static final String LAST_NAME = "LAST_NAME";
     public static final String PATRONYMIC = "PATRONYMIC";
@@ -90,27 +88,14 @@ public class Demo {
         System.out.println("TreeSet After remove each odd id students");
         StudentUtil.showStudentSet(studentTreeSet);
 
+        // 5. Task to work with Map'a. Add 15 objects of class Good
+        System.out.println("  ========== part 5 ==========");
+        Map<Long, Good> map = GoodUtil.generateTreeMapGood(15);
+        GoodUtil.showMapGoods(map);
 
+        System.out.println();
 
-//        User liza = UserUtil.generateUserWithFriend(2);
-//        UserUtil.showUser(liza);
-//        User pasha = UserUtil.generateUserWithFriend(2);
-//        UserUtil.showUser(pasha);
-//        User katya = UserUtil.generateUserWithFriend(2);
-//        UserUtil.showUser(katya);
-//        User max = UserUtil.generateUserWithFriend(2);
-//        UserUtil.showUser(max);
-//
-//        User user = UserUtil.generateUser();
-//        UserUtil.addFriend(user, liza);
-//        UserUtil.addFriend(user, pasha);
-//        UserUtil.addFriend(user, katya);
-//        UserUtil.addFriend(user, max);
-//        UserUtil.showUser(user);
-//
-//        Map<Long, User> userMap = new TreeMap<>();
-//        UserUtil.addMap(userMap, user);
-//
-//        UserUtil.showMapUser(userMap);
+        Map<String, String> maps = GoodUtil.generateHashMapGood(15);
+        GoodUtil.showMapGood(maps);
     }
 }

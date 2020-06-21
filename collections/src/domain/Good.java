@@ -9,7 +9,7 @@ public class Good {
     private Integer quantityGoodsStock;
 
     {
-        idGood = 0L;
+        idGood = 1L;
         category = "Not Selected";
         nameGood = "Good";
         salesman = "company";

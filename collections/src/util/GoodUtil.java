@@ -3,9 +3,13 @@ package util;
 import domain.Good;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class GoodUtil {
     static final String ABC = "_- 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -15,7 +19,7 @@ public class GoodUtil {
 
     static SecureRandom random = new SecureRandom();
 
-    static Long id = 0L;
+    static Long id = 1L;
     static Double price = 1.1;
 
     public static String randomString(int len) {
@@ -65,25 +69,51 @@ public class GoodUtil {
         return goods;
     }
 
-    public static List<Good> generateListGoods(List<Good> goods, int count) {
+    public static List<Good> generateListGood(int count) {
+        List<Good> goods = new ArrayList<>();
         for (int i = 0; i < count; i++) {
-            goods.add(generateGood());
+            goods.add(i, generateGood());
         }
+
         return goods;
     }
 
-    public static Set<Good> generateSetGoods(Set<Good> goods, int count) {
+    public static Set<Good> generateSetGood(int count) {
+        Set<Good> goods = new HashSet<>();
         for (int i = 0; i < count; i++) {
             goods.add(generateGood());
         }
+
         return goods;
     }
 
-    public static Map<Long, Good> generateMapGoods(Map<Long,Good> goodMap, int count) {
+    public static Map<Long, Good> generateTreeMapGood(int count) {
+        Map<Long, Good> goods = new TreeMap<>();
         for (int i = 0; i < count; i++) {
             Good good = generateGood();
-            goodMap.put(good.getIdGood(), good);
+            goods.put(good.getIdGood(), good);
         }
+
+        return goods;
+    }
+
+    public static Map<String, String> generateHashMapGood(int count) {
+        Map<String, String> goods = new HashMap<>();
+        for (int i = 0; i < count; i++) {
+            Good good = generateGood();
+            goods.put(good.getNameGood(), good.getSalesman());
+        }
+
+        return goods;
+    }
+
+    public static Map<Long, Good> addMapKeyIdValueGood(Map<Long, Good> goodMap, Good good) {
+        goodMap.put(good.getIdGood(), good);
+        return goodMap;
+    }
+
+    public static Map<String, String> addMapGood(Map<String,String> goodMap, Good good) {
+        goodMap.put(good.getNameGood(), good.getSalesman());
         return goodMap;
     }
 
@@ -105,10 +135,19 @@ public class GoodUtil {
         }
     }
 
+    public static void showMapGood(Map<String, String> goods) {
+        for (Map.Entry<String, String> entry : goods.entrySet()) {
+            String key = entry.getKey();
+            System.out.print(key + " : ");
+            String value = entry.getValue();
+            System.out.println(value);
+        }
+    }
+
     public static void showMapGoods(Map<Long, Good> goods) {
         for (Map.Entry<Long, Good> good : goods.entrySet()) {
             Long key = good.getKey();
-            System.out.println(key);
+            System.out.print(key + " : ");
             Good value = good.getValue();
             System.out.println(value);
         }

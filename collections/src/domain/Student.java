@@ -3,7 +3,7 @@ package domain;
 public class Student extends Person implements Comparable<Student> {
     private Long idStudent;
     private Integer course;
-    private Person student;
+    private Person person;
 
     public Student() {
     }
@@ -11,7 +11,7 @@ public class Student extends Person implements Comparable<Student> {
     public Student(Long idStudent, Integer course, Person student) {
         this.idStudent = idStudent;
         this.course = course;
-        this.student = student;
+        this.person = student;
     }
 
 
@@ -32,11 +32,11 @@ public class Student extends Person implements Comparable<Student> {
     }
 
     public Person getStudent() {
-        return student;
+        return person;
     }
 
     public void setStudent(Person student) {
-        this.student = student;
+        this.person = student;
     }
 
 
@@ -69,7 +69,7 @@ public class Student extends Person implements Comparable<Student> {
         return "Student{" +
                 "idStudent=" + idStudent +
                 ", course=" + course +
-                ", student=" + student +
+                ", student=" + person +
                 "} " + super.toString();
     }
 

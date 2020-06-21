@@ -3,8 +3,8 @@ package util;
 import domain.Book;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -54,13 +54,6 @@ public class BookUtil {
             books.add(generateBook());
         }
         return books;
-    }
-    public static Set<Book> generateSetBook(int value) {
-        Set<Book> bookSet = new HashSet<>();
-        for (int i = 0; i < value; i++) {
-            bookSet.add(generateBook());
-        }
-        return bookSet;
     }
 
     public static Set<Book> generateSetWithDuplicate(Set<Book> books, int elements, int duplicate) {
@@ -132,7 +125,9 @@ public class BookUtil {
 
     public static void showSortBook(List<Book> books, String whatSort) {
         BookComparator comparator = new BookComparator(whatSort);
-        books.sort(comparator);
+
+        Collections.sort(books, comparator);
+
 
         for (Book book : books) {
             System.out.println(book);

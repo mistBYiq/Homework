@@ -1,6 +1,5 @@
 package domain;
 
-import java.util.Collections;
 import java.util.List;
 
 public class User {
@@ -81,7 +80,7 @@ public class User {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", surname='" + surname + '\'' +
-                ", friends=" + friends +
+                ", friends " + name + " = " + friends +
                 '}';
     }
 }

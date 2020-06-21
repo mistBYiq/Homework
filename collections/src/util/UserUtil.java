@@ -1,13 +1,9 @@
 package util;
 
-import com.sun.source.tree.Tree;
 import domain.User;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
 
 public class UserUtil {
     static final String[] arrayName = {"Артём", "Арсений", "Борис", "Владислав", "Григорий", "Дмитрий", "Евгений",
@@ -17,7 +13,7 @@ public class UserUtil {
     static final String[] arraySurname = {"Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson",
             "Taylor", "Anderson", "White", "King", "Morgan", "Baker", "Hill"};
 
-    static Long id = 0L;
+    static Long id = 1L;
 
     public static User generateUser() {
         User user = new User();
@@ -64,39 +60,50 @@ public class UserUtil {
         return friends;
     }
 
-    public static Set<User> generateUsersSet(Set<User> users, int count) {
-        for (int i = 0; i < count; i++) {
-            users.add(generateUser());
-        }
-        return users;
-    }
-
-    public static Map<Long, User> generateUsersMap(int count) {
-        Map<Long, User> userMap = new TreeMap<>();
-        for (int i = 0; i < count; i++) {
-            User user = generateUserWithFriend(5);
-            userMap.put(user.getId(), user);
-        }
-        return userMap;
-    }
-
     public static void addFriend(User user, User friend) {
         user.getFriends().add(friend);
     }
 
-    public static void addMap(Map<Long, User> userMap, User user) {
-        userMap.put(user.getId(), user);
-    }
-
     public static void showUser(User user) {
         System.out.println(user);
+
     }
 
-    public static void showMapUser(Map<Long, User> users) {
-        for (Map.Entry<Long, User> user : users.entrySet()) {
-            Long key = user.getKey();
-            User value = user.getValue();
-            System.out.println(key + " : " + value );
+    // recursive method. displays all friends of all levels of nesting
+    public static void showAllFriends(User user) {
+        System.out.println(user.getName() );
+        System.out.print("\t" + user.getName() + " friends  = ");
+        System.out.print("{ ");
+        for (int i = 0; i < user.getFriends().size(); i++) {
+            System.out.print("\t" + user.getFriends().get(i).getName());
+        }
+
+        System.out.println(" }");
+        for (int i = 0; i < user.getFriends().size(); i++) {
+            showAllFriends(user.getFriends().get(i));
         }
     }
+
+    // The recursive method displays user friends depending on the level of nesting.
+    // at the first level displays only friends (1) of the user
+    // on the second friends (1) user and friends (2) friends (1) user
+    // on the third friends (1) user, friends (2) friends (1) user and friends (3) friends (2) and so on
+    public static void showFriendsNestingLevel(User user, int nestingLevel) {
+        System.out.println("id" + user.getId() + " " + user.getName() + " " + user.getSurname());
+        System.out.print("\t" + "id" + user.getId() + " " + user.getName() + " friends  = ");
+        System.out.print("{ ");
+        for (int i = 0; i < user.getFriends().size(); i++) {
+            System.out.print("\t" + "id" + user.getFriends().get(i).getId() + " " + user.getFriends().get(i).getName()
+                    + " " + user.getFriends().get(i).getSurname() + ", ");
+        }
+        System.out.println(" }");
+        if (nestingLevel > 1) {
+            nestingLevel--;
+            for (int i = 0; i < user.getFriends().size(); i++) {
+                // recursion
+                showFriendsNestingLevel(user.getFriends().get(i), nestingLevel);
+            }
+        }
+    }
+
 }
