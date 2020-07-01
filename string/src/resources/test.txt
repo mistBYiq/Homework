@@ -10,3 +10,26 @@ a otgq38 0a g povaopva vk540ayt ae5g85gn4fgk vaej/.
 abga g.b ag a.vb./ab/a a..a/ba/h5t;abih 5a ij na5 gg ,.aerebab.a.b a.
 
     to be continue...
+       //"\\s*(\\s|,|!|\\.)\\s*"
+    //(^\t.+$\n) paragr
+    //([^.!?]+[.!?]) sen
+    //(\b\S+\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b) components
+    //(\b\S+[^ \d]\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b)
+     //   (\b\S+\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b)
+     // "(\\b\\S+\\b)|(\\s)|(\\S)|(\\b[0-9,]+.\\d+\\b)"
+        //(\b\S+\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b)
+        //(\b\S+\b)
+
+        //([^\d\s.]+|(?<!\d\\.\d)\\.\\,) num--
+        //([-+]?\b[^\D]\S+\b) num
+
+          //      ([^\d\s.,]+|(?<!\d\\.\d)\\) word
+        //\W(?!\d) sim
+        //(^\t.+$\n) paragr
+        //([^.!?]+[.!?]) sen
+        //(\b\S+\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b) components
+
+
+        //paragraph_pattern=[\\r\\n|\\r|\\n]+
+        //sentence_pattern=(?<=[.?!])\\s+(?=[^.!?])
+        //word_pattern=([A-Za-z]+)|([\\W&&[^\\s\\n=<>\\&]])

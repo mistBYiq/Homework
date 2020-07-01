@@ -21,9 +21,9 @@ public class Composite implements Component {
         componentList.remove(component);
     }
     @Override
-    public void read() {
+    public void show() {
         for (Component component : componentList) {
-            component.read();
+            component.show();
         }
     }
 }

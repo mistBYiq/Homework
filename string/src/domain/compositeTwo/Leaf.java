@@ -29,8 +29,15 @@ public class Leaf implements Component{
     }
 
     @Override
-    public void read() {
-        System.out.print(getValue());
+    public String toString() {
+        return "Leaf{" +
+                "value='" + value + '\'' +
+                '}';
+    }
+
+    @Override
+    public void show() {
+        toString();
     }
 
 }

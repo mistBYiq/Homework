@@ -1,10 +1,13 @@
 package util;
 
-import java.util.ArrayList;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -17,7 +20,9 @@ public class UtilString {
     public static final String REGEXP_SENTENCE= "([^.!?]+[.!?])";
     public static final String REGEXP_LETTER = "([a-zA-Z])";
     public static final String REGEXP_VOWELS = "([aAeEiIuUoO])";
-    public static String convertUppercaseFirstLetter(String text) {
+    public static final String REGEXP_INTERROGATIVE_SENTENCE = "([^.!?\n\t]+[?])";
+
+    public static void convertUppercaseFirstLetter(String text) {
         char[] charArrayText = text.toCharArray();
         StringBuilder resultBuilder = new StringBuilder();
 
@@ -34,7 +39,7 @@ public class UtilString {
             resultBuilder.append(charArrayText[i]);
         }
 
-        return resultBuilder.toString();
+        System.out.println(resultBuilder.toString());
     }
 
     public static void countPunctuationMarks(String text) {
@@ -59,26 +64,27 @@ public class UtilString {
     }
 
     public static void replaceWithGivenCharacter(String text, int length, char givenCharacter) {
-        // ([^\d\s.,]{3,}|(?<!\d\\.\d)\\)
-        final String REGEXP_WORD_GIVEN_LENGTH = "([^\\d\\s.,]{" + length + ",}|(?<!\\d\\\\.\\d)\\\\)";
+        final String REGEXP_WORD_GIVEN_LENGTH = "([^\\d\\s.,]{"
+                                                    + length
+                                                    + ",}|(?<!\\d\\\\.\\d)\\\\)";
         Pattern patternWord = Pattern.compile(REGEXP_WORD_GIVEN_LENGTH, Pattern.MULTILINE);
         Matcher matcherWord = patternWord.matcher(text);
 
         while (matcherWord.find()) {
             for (int i = 0; i < matcherWord.groupCount(); i++) {
                 String regex = (matcherWord.group(i));
-                String replacement = (matcherWord.group(i).substring(0, length -1) + givenCharacter
+                String replacement = (matcherWord.group(i).substring(0, length - 1) + givenCharacter
                         + matcherWord.group(i).substring(length));
-                text = text.replaceFirst(regex, replacement);
+                text = text.replace(regex, replacement);
             }
         }
         System.out.println("\nText after replacing characters :");
         System.out.println(text);
     }
 
-    public static String deleteTextBetweenCharacters(String text, char start, char end) {
+    public static void deleteTextBetweenCharacters(String text, char start, char end) {
         final String REGEXP_SOME_CHAR = "[" + start + "\"].*[" + end + "\"]";
-        return text.replaceAll(REGEXP_SOME_CHAR, "");
+        System.out.println(text.replaceAll(REGEXP_SOME_CHAR, ""));
 
     }
 
@@ -115,10 +121,18 @@ public class UtilString {
                 String sentence = matcherSentence.group(i);
                 double letters = countUpLetters(sentence);
                 double vowels = countUpVowels(sentence);
-                double percentVowels = vowels * 100 / letters;
-                System.out.println("In sentence (" + ++numSentence + ") "
-                        + percentVowels + "% vowels " + "  :  "
-                        + (100 - percentVowels) + "% consonants ");
+                if (letters != 0) {
+                    try {
+                    double percentVowels = (vowels * 100) / letters;
+                    System.out.println("In sentence (" + ++numSentence + ") "
+                            + percentVowels + "% vowels " + "  :  "
+                            + (100 - percentVowels) + "% consonants ");
+                    } catch (ArithmeticException e) {
+                        System.out.println(e.getMessage());
+                    }
+                } else {
+                    System.out.println("In sentence (" + ++numSentence + ") Error! check regex for sentences");
+                }
             }
         }
     }
@@ -148,13 +162,14 @@ public class UtilString {
     }
 
     public static void findUniqueWordsInterrogativeSentences(String text, int length) {
-        Pattern patternInterrogative = Pattern.compile("([^.!?\\n\\t]+[?])", Pattern.MULTILINE);
+        Pattern patternInterrogative = Pattern.compile(REGEXP_INTERROGATIVE_SENTENCE, Pattern.MULTILINE);
         Matcher matcherInterrogative = patternInterrogative.matcher(text);
         int countSentence = 0;
 
         while (matcherInterrogative.find()) {
             for (int i = 0; i < matcherInterrogative.groupCount(); i++) {
-                System.out.println("In Interrogative Sentence (" + ++countSentence + ")  unique words given length : ");
+                System.out.println("In Interrogative Sentence (" + ++countSentence
+                                    + ")  unique words given length : ");
                 showUniqueWordGivenLength(matcherInterrogative.group(i), length);
             }
         }
@@ -177,7 +192,42 @@ public class UtilString {
         }
     }
 
+    public static String readFile(String fileName) {
+        BufferedReader reader = null;
+        try {
+            FileReader fileReader = new FileReader(fileName);
+            reader = new BufferedReader(fileReader);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        String line = null;
+        StringBuilder stringBuilder = new StringBuilder();
+        String ls = System.getProperty("line.separator");
+        while(true) {
+            try {
+                if (!(( line = reader.readLine() ) != null)) break;
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            stringBuilder.append( line );
+            stringBuilder.append( ls );
+        }
+        stringBuilder.deleteCharAt(stringBuilder.length()-1);
+        return stringBuilder.toString();
+    }
 
+    public static int enterNumericIntData() {
+        Scanner scanner = new Scanner(System.in);
+        int numInt = scanner.nextInt();
+        scanner.close();
+        return numInt;
+    }
 
-//\*(.+?\*)
+    public static String enterStringData() {
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.next();
+        scanner.close();
+        return string;
+    }
+
 }

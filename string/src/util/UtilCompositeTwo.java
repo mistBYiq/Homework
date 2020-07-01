@@ -3,9 +3,6 @@ package util;
 import domain.compositeTwo.Component;
 import domain.compositeTwo.Composite;
 import domain.compositeTwo.Leaf;
-
-import java.util.ArrayList;
-import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,7 +19,6 @@ public class UtilCompositeTwo {
         while (matcherParagraph.find()) {
             for (int i = 0; i <= matcherParagraph.groupCount(); i++) {
                 if (matcherParagraph.group(i) != null) {
-
                     composite.addComponent(splitSentence(matcherParagraph.group(i)));
                 }
             }
@@ -39,7 +35,6 @@ public class UtilCompositeTwo {
             for (int i = 0; i <= matcherSentence.groupCount(); i++) {
                 String temp = matcherSentence.group(i);
                 if (temp != null) {
-
                     composite.addComponent(splitComponents(temp,composite));
                 }
             }
@@ -74,6 +69,3 @@ public class UtilCompositeTwo {
     }
 
 }
-//(^\t.+$\n) paragr
-//([^.!?]+[.!?]) sen
-//(\b\S+\b)|(\s)|(\S)|(\b[0-9,]+.\d+\b) components
