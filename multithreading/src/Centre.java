@@ -36,6 +36,7 @@ public class Centre {
             }
         }
 
+        //attach everything to the main thread to complete sequentially
         Arrays.stream(client).forEach((thread) -> {
             try {
                 thread.join();
@@ -59,6 +60,7 @@ public class Centre {
     }
 
     private Thread createClient(int id) {
+        //
         return new Thread(
                 () -> receiveСalls(),
                 "Client " + id
