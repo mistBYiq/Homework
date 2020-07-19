@@ -1,3 +1,5 @@
+package oldversion;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +18,7 @@ public class Centre {
     public static List<Operator> operators = new ArrayList<>() ;
 
     private void working() {
-        LOGGER.info("START work Call Centre");
+        LOGGER.info("START work Call oldversion.Centre");
         //create and start operators
         IntStream.range(0, NUMBER_OPERATORS).forEach(i -> {
             operators.add(createOperator(i));
@@ -32,7 +34,7 @@ public class Centre {
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
-                LOGGER.throwing("Centre", "working", e);
+                LOGGER.throwing("oldversion.Centre", "working", e);
             }
         }
 
@@ -41,7 +43,7 @@ public class Centre {
             try {
                 thread.join();
             } catch (InterruptedException e) {
-                LOGGER.throwing("Centre", "working", e);
+                LOGGER.throwing("oldversion.Centre", "working", e);
             }
         });
 
@@ -49,10 +51,10 @@ public class Centre {
             try {
                 operator.join();
             } catch (InterruptedException e) {
-                LOGGER.throwing("Centre", "working", e);
+                LOGGER.throwing("oldversion.Centre", "working", e);
             }
         }
-        LOGGER.info("FINNISH work Call-Centre");
+        LOGGER.info("FINNISH work Call-oldversion.Centre");
     }
 
     private Operator createOperator(int id) {
@@ -84,7 +86,7 @@ public class Centre {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
-            LOGGER.throwing("Centre", "receiveСalls", e);
+            LOGGER.throwing("oldversion.Centre", "receiveСalls", e);
         }
         if (!determineIfOperatorIsFree()) {
             LOGGER.info("on the waiting list " + threadName);
@@ -111,7 +113,7 @@ public class Centre {
             operators.get(operatorNumber).setStatusFalse();
 
         } catch (InterruptedException e1) {
-            LOGGER.throwing("Centre", "receiveСalls " + threadName, e1);
+            LOGGER.throwing("oldversion.Centre", "receiveСalls " + threadName, e1);
         } finally {
             LOGGER.info("finished the call " + threadName);
             SEMAPHORE.release();
