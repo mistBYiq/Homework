@@ -1,17 +1,0 @@
-
-X	java:S125
-"<This block of commented-out lines of code should be removed.(¿Õ»Ö8¼–ëµ.
-Y
-java:S1854"<Remove this useless assignment to local variable "catClass".(Şãó8¼–ëµ.
-J
-java:S1481"-Remove this unused "catClass" local variable.(Şãó8¼–ëµ.
-]	java:S125"<This block of commented-out lines of code should be removed.(“»†ÿÿÿÿÿ8¼–ëµ.
-]	java:S125"<This block of commented-out lines of code should be removed.(ïİ‡şÿÿÿÿ8¼–ëµ.
-X	java:S125"<This block of commented-out lines of code should be removed.(Ìõ—8¼–ëµ.
-X	java:S125"<This block of commented-out lines of code should be removed.(©ïß 8¼–ëµ.
-^
-java:S1854"<Remove this useless assignment to local variable "catClass".(‘ØÅ‚ùÿÿÿÿ8ğªÜµ.
-_
-java:S2133"=Remove this object instantiation and use "Cat.class" instead.(÷»Áùÿÿÿÿÿ8ğªÜµ.
-O
-java:S1481"-Remove this unused "catClass" local variable.(‘ØÅ‚ùÿÿÿÿ8ğªÜµ.

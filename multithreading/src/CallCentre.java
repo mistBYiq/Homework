@@ -21,7 +21,6 @@ public class CallCentre {
     }
 
     private void workCallCentre() {
-
         System.out.println("START Call-Centre");
 
         // Create ThreadFactory. In this case it is needed to set the names of the thread
@@ -61,7 +60,6 @@ public class CallCentre {
                 e.printStackTrace();
             }
         }
-
 
         System.out.println("Finish work Operators");
         // terminating threads

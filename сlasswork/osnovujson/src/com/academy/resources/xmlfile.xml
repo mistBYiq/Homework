@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<academy:cars
+        xmlns:academy="http://htp.com/academy"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://htp.com/academy car-validation.xsd">
+    <car id="1">
+        <ttype>sedan</ttype>
+        <vin>36548745</vin>
+        <color>blue</color>
+        <year>2019</year>
+        <model>BMW</model>
+    </car>
+    <!--Comment CTRL+SHIFT+/ -->
+    <car id="2">
+        <ttype>hatchback</ttype>
+        <vin>343762</vin>
+        <color>red</color>
+        <year>2020</year>
+        <model>KIA</model>
+    </car>
+</academy:cars>

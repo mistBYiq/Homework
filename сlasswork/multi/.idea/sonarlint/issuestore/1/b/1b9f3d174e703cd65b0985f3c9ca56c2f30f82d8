@@ -1,18 +1,0 @@
-
-l
-java:S3457"Q%n should be used in place of \n to produce the platform-specific line separator.(Û™ñÇùÿÿÿÿ
-\
-java:S2142;"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
-L
-java:S2696+"6Make the enclosing method "static" or remove this set.(è¬ß‹
-l
-java:S3457-"Q%n should be used in place of \n to produce the platform-specific line separator.(íæ¯äúÿÿÿÿ
-Q
-java:S26965"6Make the enclosing method "static" or remove this set.(Œ¤œ¼þÿÿÿÿ
-g
-java:S3457:"Q%n should be used in place of \n to produce the platform-specific line separator.(ßüØï
->	java:S108;")Either remove or fill this block of code.(ä ¹€
-Q	java:S125("<This block of commented-out lines of code should be removed.(‚’ó¬
-V	java:S1250"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
-Q	java:S1254"<This block of commented-out lines of code should be removed.(‚’ó¬
-V	java:S1256"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ
