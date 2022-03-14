@@ -1,5 +1,0 @@
-/sixInnerClass/.idea/
-# IntellijIdea files
-*.iml
-.idea
-out
